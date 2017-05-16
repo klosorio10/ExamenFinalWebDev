@@ -1,6 +1,6 @@
 # twitterStreamerMap
 
-To start the poject
+To start the project
 
 ```
 git clone https://github.com/klosorio10/ExamenFinalWebDev.git
