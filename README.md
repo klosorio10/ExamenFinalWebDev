@@ -1,4 +1,15 @@
-# twitterStreamerMeteor
+# twitterStreamerMap
+
+To start the poject
+
+```
+git clone https://github.com/klosorio10/ExamenFinalWebDev.git
+
+cd ExamenFinalWebdev
+cd ExamenFinal
+
+```
+
 
 A simple boilerplate for a Meteor 1.4 Twitter streamer application with React. Uses the twitter [npm](https://www.npmjs.com/package/twitter) module for connecting to twitter. It requires you to setup your credentials on the server using environment variables:
 
