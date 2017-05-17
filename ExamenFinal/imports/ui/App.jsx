@@ -11,7 +11,8 @@ export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      projection : null
+      projection : null,
+      primera : 0
     };
   }
 
@@ -24,17 +25,22 @@ export class App extends Component {
 
     console.log(evt.target.value);
     Meteor.call("twitter.stream", evt.target.value);
-
   }
 
   getProjection(){
-    console.log("getProyection desde el hijo");
-    console.log(this.state.projection);
     return this.state.projection;
   }
 
   setProjection(mapa){
       this.setState({ projection:mapa });
+  }
+
+  getPrimera(){
+    return this.state.primera;
+  }
+
+  setPrimera(p){
+      this.setState({ primera:p });
   }
 
   render() {
@@ -49,8 +55,8 @@ export class App extends Component {
         <h2>Results:</h2>
         <div className="outsideWrapper">
           <div className="insideWrapper">
-            <canvas className="coveringCanvas" id="myCanvas" width="960px" height="500px"></canvas>
             <ColombiaMap className="coveredImage" data={{}} setProjection={(mapa)=> this.setProjection(mapa)}/>
+            <canvas className="coveringCanvas" id="myCanvas" width="960px" height="500px"></canvas>
             <TweetsResults tweets={this.props.tweets} getProjection={()=>this.getProjection()}/>
           </div>
         </div>

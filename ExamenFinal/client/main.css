@@ -10,6 +10,9 @@
     width:960px; height:500px;
     position:relative; top:0px; left:0px;
 }
+.center{
+  text-align: center;
+}
 .coveringCanvas{
     width:960px; height:500px;
     position:absolute; top:0px; left:0px;

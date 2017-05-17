@@ -18,14 +18,15 @@ export default class TweetResults extends Component {
       plano = projection([lat,long])
       x = (plano[0]);
       y = (plano[1]);
-      console.log("la:"+lat+", lon:"+long+ "plano x:"+x+", y:"+y);
       var canvas = document.getElementById('myCanvas');
       if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
         var img = new Image();
         img.src= tweet.user.profile_image_url;
-            ctx.drawImage(img, x-15, y-15, 30, 30)
-      }
+            ctx.drawImage(img, x-15, y-15, 30, 30);
+            ctx.strokeStyle = 'rgba(x/10, y/10, 255,0)';
+            ctx.strokeRect(x-15, y-15, 30, 30);
+        }
       return (<div className="tweet">
       </div>);
     });
