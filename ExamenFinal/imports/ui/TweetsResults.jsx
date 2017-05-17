@@ -24,7 +24,7 @@ export default class TweetResults extends Component {
         var img = new Image();
         img.src= tweet.user.profile_image_url;
             ctx.drawImage(img, x-15, y-15, 30, 30);
-            ctx.strokeStyle = 'rgba(x/10, y/10, 255,0)';
+            ctx.strokeStyle = 'rgba(Math.floor((Math.random() * 255) + 1), Math.floor((Math.random() * 255) + 1), 255,0)';
             ctx.strokeRect(x-15, y-15, 30, 30);
         }
       return (<div className="tweet">
