@@ -1,1 +1,19 @@
 /* CSS declarations go here */
+.outsideWrapper{
+    width:960px; height:500px;
+    margin:20px 60px;
+}
+.insideWrapper{
+    width:960px; height:500px;
+    position:relative;}
+.coveredImage{
+    width:960px; height:500px;
+    position:relative; top:0px; left:0px;
+}
+.coveringCanvas{
+    width:960px; height:500px;
+    position:absolute; top:0px; left:0px;
+    overflow:visible;
+    pointer-events:none;
+    background:none !important;
+}

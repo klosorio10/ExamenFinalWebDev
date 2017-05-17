@@ -11,8 +11,8 @@ export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    projection = null;
-    }
+      projection : null
+    };
   }
 
   changeQuery(evt) {
@@ -27,10 +27,15 @@ export class App extends Component {
 
   }
 
-  setProjection(mapa){
-    this.setState({projection:mapa});
+  getProjection(){
+    console.log("getProyection desde el hijo");
+    console.log(this.state.projection);
+    return this.state.projection;
   }
 
+  setProjection(mapa){
+      this.setState({ projection:mapa });
+  }
 
   render() {
     console.log("render!");
@@ -42,21 +47,18 @@ export class App extends Component {
           <span></span>
         }
         <h2>Results:</h2>
-          <ColombiaMap width="600" height="600" data={{}}></ColombiaMap>
-          <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
-          {this.pintarTweets()}
+        <div className="outsideWrapper">
+          <div className="insideWrapper">
+            <canvas className="coveringCanvas" id="myCanvas" width="960px" height="500px"></canvas>
+            <ColombiaMap className="coveredImage" data={{}} setProjection={(mapa)=> this.setProjection(mapa)}/>
+            <TweetsResults tweets={this.props.tweets} getProjection={()=>this.getProjection()}/>
+          </div>
+        </div>
+
+
       </div>
     );
   }
-}
-
-
-pintarTweets( ) {
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.arc(95,50,40,0,2*Math.PI);
-ctx.stroke();
 }
 
 App.propTypes = {

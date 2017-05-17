@@ -32,6 +32,7 @@ export default class ColombiaMap extends Component {
 
 		var path = d3.geo.path()
 		  .projection(this.projection);
+			{this.props.setProjection(this.projection)};
 
 		// Set svg width & height
 		var svg = d3.select(this.svg)
@@ -82,7 +83,6 @@ export default class ColombiaMap extends Component {
 		      .on('mouseover', mouseover)
 		      .on('mouseout', mouseout)
 		      .on('click', clicked);
-					this.props.setProjection(this.projection);
 		});
 
 		// Get province name
